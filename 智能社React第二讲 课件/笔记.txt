@@ -1,0 +1,68 @@
+组件、状态
+
+组件内的节点(Node)
+
+----------------------------------------------------
+
+1.React特别不爱管闲事
+  组件、状态
+2.组件内节点
+  ref="类似id"
+  this.refs['名字']=>原生
+
+*推荐状态
+
+----------------------------------------------------
+
+表单原件的问题：
+1.用value，改成defaultValue
+2.用checked，改成defaultChecked
+
+----------------------------------------------------
+
+组件间通信
+1.父级->子级
+2.子级->父级
+
+----------------------------------------------------
+
+webPack
+1.babel实时编译，慢
+2.测试
+3.自己搭建服务器
+4.热更新   ×
+
+----------------------------------------------------
+
+webPack
+1.下载webPack工具
+  cnpm install -g webpack               #webpack的cli环境
+  cnpm install -g webpack-dev-server    #webpack自带的服务器
+
+2.各种依赖库
+  #babel相关库
+  cnpm install babel-core -D            #后台编译babel工具
+  cnpm install babel-preset-es2015 -D   #babel对ES2015的预设
+  cnpm install babel-loader -D          #babel加载器
+
+  #webpack本身
+  cnpm install webpack -D               #webpack本地依赖库
+  cnpm install webpack-dev-server -D    #webpack服务器的本地依赖
+
+  cnpm install babel-preset-react -D    #babel-react预设
+
+  cnpm install react -D                 #react本身
+  cnpm install react-dom -D             #react-dom本身
+
+  cnpm install react-hot-loader -D      #热更新过
+
+  cnpm install style-loader -D
+  cnpm install css-loader -D
+
+3.webpack的配置文件
+  webpack.config.js                     #webpack的配置文件
+  .baberc                               #babel预设文件
+
+----------------------------------------------------
+
+zns.ke.qq.com

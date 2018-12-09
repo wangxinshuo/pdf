@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/browser.js" charset="utf-8"></script>
+    <script src="js/react.js" charset="utf-8"></script>
+    <script src="js/react-dom.js" charset="utf-8"></script>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <style media="screen">
+      .box {width:200px;height:200px;background:#CCC;position:absolute;}
+    </style>
+    <script type="text/babel">
+    class Drag extends React.Component{
+      constructor(...args){
+        super(...args);
+      }
+      componentDidMount(){
+        var oDiv=this.refs['div1'];
+
+        oDiv.onmousedown=function (){
+          document.onmousemove=function (){
+
+          };
+        };
+      }
+      render(){
+        return <div className="box" ref="div1">
+          11111
+        </div>;
+      }
+    }
+
+    $(function (){
+      ReactDOM.render(
+        <Drag />,
+        $('blue-view')[0]
+      );
+    });
+    </script>
+  </head>
+  <body>
+    <blue-view></blue-view>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="js/browser.js" charset="utf-8"></script>
+    <script src="js/react.js" charset="utf-8"></script>
+    <script src="js/react-dom.js" charset="utf-8"></script>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script type="text/babel">
+    class Title extends React.Component{
+      constructor(...args){
+        super(...args);
+      }
+      fn(){
+        //alert();
+        /*var oS=this.refs['s1'];
+
+        oS.style.color='red';*/
+
+        $(this.refs['s1']).css('color', 'red');
+      }
+      render(){
+        return <div>
+          <input type="button" value="按钮" onClick={this.fn.bind(this)} />
+          <span ref="s1">aaaaa</span>
+        </div>;
+      }
+    }
+    $(function (){
+      ReactDOM.render(
+        <Title/>,
+        $('#div1')[0]
+      );
+    });
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+
+    </div>
+  </body>
+</html>

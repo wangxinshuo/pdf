@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      img {margin:100px;width:210px;height:103px}
+    </style>
+    <title></title>
+    <script src="js/browser.js" charset="utf-8"></script>
+    <script src="js/react.js" charset="utf-8"></script>
+    <script src="js/react-dom.js" charset="utf-8"></script>
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script type="text/babel">
+    class LazyLoad extends React.Component{
+      constructor(...args){
+        super(...args);
+
+        this.aImgPath=this.props.imgs.split(',');
+
+        const _this=this;
+        window.onscroll=function (){
+          var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+
+          _this.refs['div1'].children
+        };
+      }
+      render(){
+        var arr=[];
+        for(var i=0;i<this.aImgPath.length;i++){
+          arr.push(<img key={i} data-src={'img/'+this.aImgPath[i]} alt="logo" />);
+        }
+        return <div ref="div1">{arr}</div>;
+      }
+    }
+    $(function (){
+      ReactDOM.render(
+        <LazyLoad imgs="logo.png,logo2.png,logo3.png,logo4.png"/>,
+        $('blue-view')[0]
+      );
+    });
+    </script>
+  </head>
+  <body>
+    <blue-view></blue-view>
+  </body>
+</html>
